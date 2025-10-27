@@ -33,6 +33,7 @@ def update_quantity(inventory, item_name, new_quantity):
     """
     inventory[item_name] == new_quantity
     print(f"{item_name} quantity updated to {new_quantity}.")
+    display_inventory(new_quantity) -> 
 
 def display_inventory(inventory):
     """
@@ -56,8 +57,12 @@ inventory = {
 }
 
 while True:
-    print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
-    choice = input("Enter your choice (1-5): ")
+    print()
+    print()
+    print(display_inventory(inventory))
+    print()
+    print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Exit")
+    choice = input("Enter your choice (1-4): ")
 
     if choice == "1":
         name = input("Enter item name: ")
@@ -71,8 +76,6 @@ while True:
         quantity = input("Enter new quantity: ")
         update_quantity(inventory, name, quantity)
     elif choice == "4":
-        display_inventory(inventory)
-    elif choice == "5":
         print("Exiting the program.")
         break
     else:
